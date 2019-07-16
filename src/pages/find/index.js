@@ -1,7 +1,14 @@
 import './index.css';
 
+import DegreeColor from '../../util/DegreeColor';
+
 import COMMUNITY from './data/community';
-import STATUS_COLOR_MAP from './data/status_color_map';
+// import STATUS_COLOR_MAP from './data/status_color_map';
+
+const degreeColor = new DegreeColor({
+  max: 80000,
+  min: 40000,
+});
 
 // 创建地图实例
 const map = new AMap.Map("container", {
@@ -29,16 +36,21 @@ const communities = COMMUNITY.map(community => {
 
   text.setMap(map);
 
+  
   const path = community.polygon.map(point => {
     return new AMap.LngLat(point[0], point[1]);
   });
+
+  const fillColor = degreeColor.getColor(community.price);
+
   // 创建面覆盖物
   return new AMap.Polygon({
     path,
-    fillOpacity: 0.3,
+    fillOpacity: 0.5,
     strokeWeight: 2,
     strokeOpacity: 0.5,
-    fillColor: STATUS_COLOR_MAP[community.status],
+    fillColor,
+    // fillColor: STsqqATUS_COLOR_MAP[community.status],
   });
 });
 

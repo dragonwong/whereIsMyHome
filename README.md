@@ -20,4 +20,4 @@ In `src/pages/find/index.html`, replace `{{your_key}}` with your own key from ht
 npm start
 ```
 
-Visit `http://localhost/home/find`
+Visit http://localhost/home/find .
