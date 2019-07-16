@@ -1,0 +1,19 @@
+html,
+body,
+#container {
+  height: 100%;
+  width: 100%;
+}
+
+.amap-icon img {
+  width: 25px;
+  height: 34px;
+}
+
+.input-card .btn {
+  width: 9rem;
+}
+
+.input-card .btn:first-child {
+  margin-right: 1.3rem;
+}
