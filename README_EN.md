@@ -2,10 +2,6 @@
 
 This project aims to help me to find my home in Beijing.
 
-## Feature
-
-- [ ] 
-
 ## Tutorial
 
 ### Install

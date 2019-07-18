@@ -14,6 +14,6 @@ body,
   width: 9rem;
 }
 
-.input-card .btn:first-child {
-  margin-right: 1.3rem;
+.input-card .btn:not(:first-of-type) {
+  margin-left: 1.3rem;
 }
