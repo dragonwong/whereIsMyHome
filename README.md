@@ -1,23 +1,31 @@
 # Where Is My Home
 
-This project aims to help me to find my home in Beijing.
+这个项目旨在帮我在北京找到一个家。
 
-## Tutorial
+[English Document](./README_EN.md)
 
-### Install
+## 功能
+
+- [x] 配置自己的小区浏览记录
+- [x] 小区颜色随价格变深
+- [ ] 小区支持显示自己的判断状态：通过，不通过，待定
+
+## 教程
+
+### 安装
 
 ```bash
 npm install
 ```
 
-### Some Modify
+### 一些修改
 
-In `src/pages/find/index.html`, replace `{{your_key}}` with your own key from https://lbs.amap.com/dev/key/app# .
+在 `src/pages/find/index.html` 中, 把 `{{your_key}}` 用你自己从 https://lbs.amap.com/dev/key/app# 获取的 key 替换。
 
-### Start
+### 开始
 
 ```
 npm start
 ```
 
-Visit http://localhost/home/find .
+访问 http://localhost/home/find 。
