@@ -2,9 +2,10 @@
  * 
  
  color   hex     price
-  红   FF0000  10,0000
-  黄   FFFF00   5,0000
-  绿   00FF00        0
+  黑   000000  13,0000
+  红   FF0000  10,0000    twoThird
+  黄   FFFF00   7,0000    oneThird
+  绿   00FF00   4,0000
 
  *
  */
@@ -20,24 +21,34 @@ class DegreeColor {
   }) {
     this.max = max;
     this.min = min;
-    this.middle = (max + min) / 2;
+    this.third = (max - min) / 3;
+    this.oneThird = min + this.third;
+    this.twoThird = min + this.third * 2;
   }
   getColor(number) {
+    // 000000
     if (number >= this.max) {
-      return '#FF0000';
+      return '#000000';
     }
-    if (number <= this.min) {
-      return '#00FF00';
+    // FF0000 ~ 000000
+    if (number >= this.twoThird) {
+      const dec = Math.round(256 - 256 * (number - this.twoThird) / this.third);
+      const hex = dec.toString(16).toUpperCase();
+      return `#${prefix0(hex)}0000`;
     }
-    if (number <= this.middle) {
-      const dec = Math.round(256 * (number - this.min) / (this.middle - this.min));
+    // FFFF00 ~ FF0000
+    if (number >= this.oneThird) {
+      const dec = Math.round(256 - 256 * (number - this.oneThird) / this.third);
+      const hex = dec.toString(16).toUpperCase();
+      return `#FF${prefix0(hex)}00`;
+    }
+    // 00FF00 ~ FFFF00
+    if (number >= this.min) {
+      const dec = Math.round(256 * (number - this.min) / this.third);
       const hex = dec.toString(16).toUpperCase();
       return `#${prefix0(hex)}FF00`;
     }
-    
-    const dec = Math.round(256 - 256 * (number - this.middle) / (this.max - this.middle));
-    const hex = dec.toString(16).toUpperCase();
-    return `#FF${prefix0(hex)}00`;
+    return '#00FF00';
   }
 }
 

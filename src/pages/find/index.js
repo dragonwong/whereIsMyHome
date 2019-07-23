@@ -11,14 +11,14 @@ import PERSONAL from './data/personal';
 import STATUS_COLOR_MAP from './data/status_color_map';
 
 const degreeColor = new DegreeColor({
-  max: 80000,
-  min: 40000,
+  max: 150000,
+  min: 30000,
 });
 
 // 创建地图实例
 const map = new AMap.Map("container", {
   zoom: 15,
-  center: [116.455913, 39.895467],
+  center: [116.472003, 39.923934],
   resizeEnable: true,
   mapStyle: 'amap://styles/dark',
 });
