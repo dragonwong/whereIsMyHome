@@ -157,6 +157,29 @@ const PERSONAL = {
       status: STATUS.OK,
       disadvantage: ['非全明'],
     },
+    '向军南里': {
+      status: STATUS.NOT_OK,
+      advantage: ['地铁近', '有电梯'],
+      disadvantage: ['非全明', '客厅小'],
+    },
+    '向军北里': {
+      status: STATUS.NOT_OK,
+      advantage: ['地铁近', '有电梯'],
+      disadvantage: ['户型差', '客厅小'],
+    },
+    '金台北街': {
+      status: STATUS.NOT_OK,
+      advantage: ['地铁近', '有电梯'],
+      disadvantage: ['老', '户型差'],
+    },
+    '力源里': {
+      status: STATUS.OK,
+      disadvantage: ['梯户比低', '房源少'],
+    },
+    '通惠家园': {
+      status: STATUS.OK,
+      advantage: ['户型好'],
+    },
   },
 };
 
